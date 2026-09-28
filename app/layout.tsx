@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
+import { Navbar } from "@/components/navbar";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -47,9 +48,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${poppins.variable} ${satoshi.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-satoshi bg-black text-white selection:bg-lime selection:text-black">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col font-satoshi bg-black text-white selection:bg-lime selection:text-black"
+      >
+        <Navbar />
         {children}
       </body>
     </html>
