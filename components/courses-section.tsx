@@ -121,7 +121,7 @@ export const CoursesSection = () => {
         <div className="text-center max-w-3xl mx-auto">
           <h2
             id="courses-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-bold font-poppins text-zinc-900 tracking-tight leading-[1.15]"
+            className="text-3xl sm:text-4xl md:text-5xl font-semibold font-poppins text-zinc-900 tracking-tight leading-[1.15]"
           >
             Discover Your Passion,
             <br />
