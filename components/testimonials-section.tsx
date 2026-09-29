@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { FoldText } from "@/components/reactbits/fold-text";
 
 interface Testimonial {
   id: number;
@@ -87,8 +90,15 @@ export const TestimonialsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-end justify-between">
           <div className="lg:col-span-6">
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-semibold font-poppins text-zinc-900 tracking-tight leading-[1.16]">
-              Discover What Our
-              <br className="hidden sm:inline" /> Community Is Saying
+              <FoldText
+                text={"Discover What Our\nCommunity Is Saying"}
+                splitBy="char"
+                hinge="top"
+                trigger="scroll"
+                duration={0.65}
+                stagger={0.025}
+                ease="power3.out"
+              />
             </h2>
           </div>
           <div className="lg:col-span-6">

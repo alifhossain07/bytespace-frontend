@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Search } from "lucide-react";
 import { motion } from "framer-motion";
 import ShapeGrid from "@/components/reactbits/shape-grid";
+import { FoldText } from "@/components/reactbits/fold-text";
 
 export const Hero = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,7 +23,7 @@ export const Hero = () => {
       >
         <ShapeGrid
           speed={0}
-          maxCols={14}
+          maxCols={12}
           squareSize={96}
           borderColor="rgba(255, 255, 255, 0.12)"
           hoverFillColor="rgba(203, 252, 1, 0.15)"
@@ -192,32 +193,40 @@ export const Hero = () => {
         {/* Headline & Subtitle */}
         <div className="text-center max-w-4xl mx-auto pt-2 sm:pt-2">
           <h1 className="text-3xl sm:text-5xl md:text-6xl  lg:text-[68px] font-semibold font-poppins text-white leading-[1.1]">
-            Get Access to Hundreds Courses Available
+            <FoldText
+              text={"Get Access to Hundreds\nCourses Available"}
+              splitBy="char"
+              hinge="top"
+              trigger="scroll"
+              duration={0.65}
+              stagger={0.025}
+              ease="power3.out"
+            />
           </h1>
-          <p className="mt-3.5 mb-10 sm:mb-14 text-sm sm:text-base md:text-lg text-white/85 font-satoshi max-w-4xl mx-auto font-normal leading-relaxed">
+          <p className="mt-3.5 mb-10 sm:mb-14 text-sm sm:text-base md:text-lg text-white font-satoshi max-w-4xl tracking-wide mx-auto font-light leading-relaxed">
             Unlock your creativity, gain valuable knowledge, and grow your
             business with our wide range of courses.
           </p>
 
-          {/* Search Bar Form */}
+          {/* Search Bar Form (Input and Button separated as in Figma) */}
           <form
             onSubmit={handleSearch}
-            className="mt-6 sm:mt-8 mx-auto max-w-lg flex items-center bg-white rounded-full p-1 sm:p-1.5 shadow-2xl transition-shadow focus-within:ring-4 focus-within:ring-lime/40"
+            className="mt-6 sm:mt-8 mx-auto max-w-lg sm:max-w-xl flex items-start justify-start gap-2.5 sm:gap-3"
           >
-            <div className="pl-3.5 sm:pl-4 text-zinc-400 flex items-center pointer-events-none">
-              <Search className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-400" />
+            <div className="flex-1 flex items-center bg-white rounded-full px-4 sm:px-5 h-11 sm:h-12 shadow-lg focus-within:ring-2 focus-within:ring-white/40">
+              <Search className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-400 shrink-0" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Course, topic, creator"
+                className="w-full bg-transparent ml-2.5 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 font-satoshi focus:outline-none"
+                aria-label="Search courses, topics, or creators"
+              />
             </div>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Course, topic, creator"
-              className="w-full bg-transparent px-3 py-1.5 sm:py-2 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 font-satoshi focus:outline-none"
-              aria-label="Search courses, topics, or creators"
-            />
             <button
               type="submit"
-              className="min-h-[40px] sm:min-h-[44px] px-6 sm:px-7 py-2 sm:py-2.5 rounded-full bg-lime text-black font-semibold font-poppins text-xs sm:text-sm hover:brightness-105 active:scale-95 transition-all shadow-md shrink-0 cursor-pointer"
+              className="h-11 sm:h-10 px-6 sm:px-7 rounded-full bg-lime text-black font-medium sm:font-medium font-poppins text-xs sm:text-sm hover:brightness-105 active:scale-95 transition-all shadow-md shrink-0 cursor-pointer flex items-center justify-center"
             >
               Search
             </button>
@@ -252,17 +261,40 @@ export const Hero = () => {
           {/* Floating Informational UI Badges */}
 
           {/* Badge 1: UI/UX Design */}
-          <div className="absolute left-1 sm:left-4 md:left-10 lg:left-14 top-2 sm:top-14 md:top-4 z-20 bg-white text-black rounded-2xl p-2 sm:px-5 sm:py-4 shadow-2xl border border-zinc-100 flex flex-col select-none transition-all duration-300 hover:scale-105">
+          <motion.div
+            animate={{
+              scale: [1, 1.03, 1],
+            }}
+            transition={{
+              duration: 3.8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            whileHover={{ scale: 1.06 }}
+            className="absolute left-1 sm:left-4 md:left-10 lg:left-14 top-2 sm:top-14 md:top-4 z-20 bg-white text-black rounded-2xl p-2 sm:px-5 sm:py-4 shadow-2xl border border-zinc-100 flex flex-col select-none cursor-default"
+          >
             <span className="font-poppins font-medium text-[10px] sm:text-xs md:text-[16px] text-zinc-900 leading-tight">
               UI/UX Design
             </span>
             <span className="text-[8px] sm:text-[10px] md:text-xs text-zinc-500 font-satoshi mt-0.5">
               200 Courses • 1000+ Students
             </span>
-          </div>
+          </motion.div>
 
           {/* Badge 2: Learning Progress */}
-          <div className="absolute right-1 sm:right-4 md:right-10 lg:right-8 top-3 sm:top-16 md:top-4 z-20 bg-white text-black rounded-2xl p-2 sm:p-3.5 shadow-2xl space-y-1 sm:space-y-3 border border-zinc-100 min-w-[95px] sm:min-w-[140px] md:min-w-[230px] select-none transition-all duration-300 hover:scale-105">
+          <motion.div
+            animate={{
+              scale: [1, 1.035, 1],
+            }}
+            transition={{
+              duration: 4.2,
+              delay: 0.7,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            whileHover={{ scale: 1.06 }}
+            className="absolute right-1 sm:right-4 md:right-10 lg:right-8 top-3 sm:top-16 md:top-4 z-20 bg-white text-black rounded-2xl p-2 sm:p-3.5 shadow-2xl space-y-1 sm:space-y-3 border border-zinc-100 min-w-[95px] sm:min-w-[140px] md:min-w-[230px] select-none cursor-default"
+          >
             <span className="text-[8px] sm:text-[10px] md:text-[14px] text-zinc-500 font-satoshi block">
               Learning Progress
             </span>
@@ -272,10 +304,22 @@ export const Hero = () => {
             <div className="w-full bg-zinc-100 h-1 sm:h-2 rounded-full mt-1 sm:mt-2 overflow-hidden">
               <div className="bg-lime h-full rounded-full w-[55%]" />
             </div>
-          </div>
+          </motion.div>
 
           {/* Badge 3: Happy Students */}
-          <div className="absolute left-1 sm:left-2 md:left-6 lg:-left-8 bottom-2 sm:bottom-4 md:bottom-10 z-20 w-[135px] sm:w-[220px] md:w-[258px] bg-white text-black rounded-xl sm:rounded-2xl p-2 sm:p-3.5 shadow-2xl border border-zinc-100 select-none transition-all duration-300 hover:scale-105 flex flex-col items-start text-left">
+          <motion.div
+            animate={{
+              scale: [1, 1.03, 1],
+            }}
+            transition={{
+              duration: 4.0,
+              delay: 1.4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            whileHover={{ scale: 1.06 }}
+            className="absolute left-1 sm:left-2 md:left-6 lg:-left-8 bottom-2 sm:bottom-4 md:bottom-10 z-20 w-[135px] sm:w-[220px] md:w-[258px] bg-white text-black rounded-xl sm:rounded-2xl p-2 sm:p-3.5 shadow-2xl border border-zinc-100 select-none cursor-default flex flex-col items-start text-left"
+          >
             <span className="font-poppins font-medium text-[10px] sm:text-sm text-zinc-900 block leading-tight">
               Happy Students
             </span>
@@ -295,7 +339,7 @@ export const Hero = () => {
                 className="w-full h-auto object-contain"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { FoldText } from "@/components/reactbits/fold-text";
 
 interface Category {
   title: string;
@@ -38,7 +41,7 @@ export const LearningPaths = () => {
     <section
       id="learning-paths"
       aria-labelledby="learning-paths-heading"
-      className="w-full bg-white text-zinc-900 py-16 sm:py-20 md:py-2"
+      className="w-full bg-white text-zinc-900 py-16 sm:py-20 md:py-2 md:pb-24"
     >
       <div className="w-11/12 max-w-[1360px] mx-auto">
         {/* Section Header */}
@@ -47,7 +50,15 @@ export const LearningPaths = () => {
             id="learning-paths-heading"
             className="text-3xl sm:text-4xl md:text-4xl font-semibold font-poppins text-zinc-900 tracking-tight leading-[1.15]"
           >
-            Explore Diverse Learning Paths at Bytespace
+            <FoldText
+              text="Explore Diverse Learning Paths at Bytespace"
+              splitBy="char"
+              hinge="top"
+              trigger="scroll"
+              duration={0.65}
+              stagger={0.02}
+              ease="power3.out"
+            />
           </h2>
           <p className="mt-4 text-sm sm:text-base text-zinc-500  font-satoshi max-w-4xl mx-auto font-normal leading-relaxed">
             At Bytespace, we believe in empowering individuals through

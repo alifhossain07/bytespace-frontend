@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { FoldText } from "@/components/reactbits/fold-text";
 import { ShapeGrid } from "@/components/reactbits/shape-grid";
 
 export const PotentialSection = () => {
@@ -109,8 +110,15 @@ export const PotentialSection = () => {
       <div className="relative z-20 w-11/12 max-w-[860px] xl:max-w-[920px] mx-auto space-y-3 text-center flex flex-col items-center justify-center">
         {/* Main Headline */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px]  font-semibold font-poppins text-white  leading-[1.18]">
-          Unlock Your Potential as a
-          <br className="hidden sm:inline" /> Creator with ByteSpace
+          <FoldText
+            text={"Unlock Your Potential as a\nCreator with ByteSpace"}
+            splitBy="char"
+            hinge="top"
+            trigger="scroll"
+            duration={0.65}
+            stagger={0.025}
+            ease="power3.out"
+          />
         </h2>
 
         {/* Description */}

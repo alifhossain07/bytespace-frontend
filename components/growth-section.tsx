@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { Signal } from "lucide-react";
+import { FoldText } from "@/components/reactbits/fold-text";
 
 export const GrowthSection = () => {
   return (
@@ -47,7 +50,7 @@ export const GrowthSection = () => {
       </div>
 
       {/* Main Container */}
-      <div className="relative z-10 w-10/12 max-w-[1360px] mx-auto flex flex-col gap-24 sm:gap-32 lg:gap-36">
+      <div className="relative z-10 w-10/12 max-w-[1170px] mx-auto flex flex-col gap-24 sm:gap-32 lg:gap-36">
         {/* ========================================================= */}
         {/* ROW 1: Your Path to Professional Growth Starts Here!       */}
         {/* ========================================================= */}
@@ -55,8 +58,15 @@ export const GrowthSection = () => {
           {/* Left Column: Typography & Metrics (col-span-7 for wider 2-line heading) */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[46px] font-semibold font-poppins text-zinc-900 tracking-tight leading-[1.16]">
-              Your Path to Professional
-              <br className="hidden sm:inline" /> Growth Starts Here!
+              <FoldText
+                text={"Your Path to Professional\nGrowth Starts Here!"}
+                splitBy="char"
+                hinge="top"
+                trigger="scroll"
+                duration={0.65}
+                stagger={0.025}
+                ease="power3.out"
+              />
             </h2>
             <p className="mt-5 sm:mt-6 text-sm sm:text-[18px] text-zinc-500 font-satoshi font-normal leading-relaxed w-[71%]">
               Explore our curated selection of courses tailored to enhance your
@@ -301,8 +311,15 @@ export const GrowthSection = () => {
           {/* Right Column: Typography & Feature Checklist (col-span-7 for wider text area) */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center space-y-4 order-1 lg:order-2 lg:pl-6 xl:pl-24">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[44px] font-semibold font-poppins text-zinc-900 tracking-tight leading-[1.16]">
-              Create & Manage
-              <br className="hidden sm:inline" /> Courses Easily.
+              <FoldText
+                text={"Create & Manage\nCourses Easily."}
+                splitBy="char"
+                hinge="top"
+                trigger="scroll"
+                duration={0.65}
+                stagger={0.025}
+                ease="power3.out"
+              />
             </h2>
             <p className="mt-5 sm:mt-6 text-sm sm:text-base xl:text-[18px] text-zinc-500 font-satoshi font-normal leading-relaxed max-w-xl">
               <strong className="text-zinc-900 font-semibold">ByteSpace</strong>{" "}

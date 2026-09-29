@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Signal } from "lucide-react";
+import { FoldText } from "@/components/reactbits/fold-text";
 
 export const CoursesSection = () => {
   const [activeCategory, setActiveCategory] = useState("Featured");
@@ -123,9 +123,15 @@ export const CoursesSection = () => {
             id="courses-heading"
             className="text-3xl sm:text-4xl md:text-5xl font-semibold font-poppins text-zinc-900 tracking-tight leading-[1.15]"
           >
-            Discover Your Passion,
-            <br />
-            Build Your Skills
+            <FoldText
+              text={"Discover Your Passion,\nBuild Your Skills"}
+              splitBy="char"
+              hinge="top"
+              trigger="scroll"
+              duration={0.65}
+              stagger={0.025}
+              ease="power3.out"
+            />
           </h2>
           <p className="mt-4 text-sm sm:text-base text-zinc-500 font-satoshi max-w-2xl mx-auto font-normal leading-relaxed">
             At Bytespace Courses, we bring you closer to life-changing
@@ -149,7 +155,7 @@ export const CoursesSection = () => {
                   className={`min-h-[40px] px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm transition-all duration-200 ${
                     isActive
                       ? "bg-lime text-black font-semibold font-poppins shadow-sm"
-                      : "bg-[#F5F5F6] text-zinc-700 font-satoshi hover:bg-zinc-200/80"
+                      : "bg-[#F5F5F6] text-zinc-700 font-satoshi font-medium hover:bg-zinc-200/80"
                   }`}
                 >
                   {cat}
@@ -170,7 +176,7 @@ export const CoursesSection = () => {
                   className={`min-h-[40px] px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm transition-all duration-200 ${
                     isActive
                       ? "bg-lime text-black font-semibold font-poppins shadow-sm"
-                      : "bg-[#F5F5F6] text-zinc-700 font-satoshi hover:bg-zinc-200/80"
+                      : "bg-[#F5F5F6] text-zinc-700 font-satoshi font-medium hover:bg-zinc-200/80"
                   }`}
                 >
                   {cat}
@@ -191,7 +197,7 @@ export const CoursesSection = () => {
                   className={`min-h-[40px] px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm transition-all duration-200 ${
                     isActive
                       ? "bg-lime text-black font-semibold font-poppins shadow-sm"
-                      : "bg-[#F5F5F6] text-zinc-700 font-satoshi hover:bg-zinc-200/80"
+                      : "bg-[#F5F5F6] text-zinc-700 font-satoshi font-medium hover:bg-zinc-200/80"
                   }`}
                 >
                   {cat}
@@ -263,7 +269,13 @@ export const CoursesSection = () => {
                 <div className="flex items-center justify-start gap-4 mt-3 pt-0.5">
                   {/* Level Pill */}
                   <div className="inline-flex items-center gap-1.5 bg-[#F5F5F6] text-zinc-600 px-4 py-2 rounded-full text-xs font-satoshi">
-                    <Signal className="w-4 h-4 text-zinc-500" />
+                    <Image
+                      src="/images/vector.png"
+                      alt="Level"
+                      width={13}
+                      height={14}
+                      className="w-3.5 h-3.5 object-contain"
+                    />
                     <span>{course.level}</span>
                   </div>
 

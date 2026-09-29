@@ -19,24 +19,31 @@ export const Navbar = () => {
       {/* 10/12 width container as requested */}
       <div className="w-10/12 max-w-[1360px] mx-auto h-20 sm:h-24 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="inline-flex items-center" aria-label="ByteSpace Home">
+        <Link
+          href="/"
+          className="inline-flex items-center"
+          aria-label="ByteSpace Home"
+        >
           <Image
             src="/images/Header_Logo.png"
             alt="ByteSpace Logo"
             width={140}
             height={34}
-            className="h-7 sm:h-8 w-auto object-contain"
+            className="h-7 sm:h-10 w-auto object-contain"
             priority
           />
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav aria-label="Main Desktop Navigation" className="hidden md:flex items-center gap-8 lg:gap-10">
+        <nav
+          aria-label="Main Desktop Navigation"
+          className="hidden md:flex items-center gap-8 lg:gap-10"
+        >
           {navLinks.map((link, idx) => (
             <Link
               key={idx}
               href={link.href}
-              className="text-white/90 hover:text-white font-satoshi text-sm sm:text-base font-normal transition-colors"
+              className="text-white/90 hover:text-white font-satoshi text-sm sm:text-lg font-normal transition-colors"
             >
               {link.label}
             </Link>
@@ -47,13 +54,13 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <Link
             href="/signin"
-            className="text-white/90 hover:text-white font-satoshi text-sm sm:text-base font-normal transition-colors min-h-[44px] inline-flex items-center"
+            className="text-white/90 hover:text-white font-satoshi text-sm sm:text-lg font-normal transition-colors min-h-[44px] inline-flex items-center"
           >
             Sign In
           </Link>
           <Link
             href="/signup"
-            className="text-white/90 hover:text-white font-satoshi text-sm sm:text-base font-normal transition-colors min-h-[44px] inline-flex items-center"
+            className="text-white/90 hover:text-white font-satoshi text-sm sm:text-lg font-normal transition-colors min-h-[44px] inline-flex items-center"
           >
             Join Us
           </Link>
@@ -84,7 +91,7 @@ export const Navbar = () => {
               alt="Cart"
               width={20}
               height={20}
-              className="w-5 h-5 object-contain invert brightness-200"
+              className="w-6 h-6 object-contain  brightness-200"
             />
           </button>
           <button
@@ -93,7 +100,11 @@ export const Navbar = () => {
             className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-white p-2"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
@@ -101,7 +112,10 @@ export const Navbar = () => {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-persian-blue/95 border-t border-white/10 px-6 py-6 space-y-4 shadow-2xl backdrop-blur-md">
-          <nav aria-label="Mobile Navigation" className="flex flex-col space-y-3">
+          <nav
+            aria-label="Mobile Navigation"
+            className="flex flex-col space-y-3"
+          >
             {navLinks.map((link, idx) => (
               <Link
                 key={idx}
