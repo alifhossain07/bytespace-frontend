@@ -5,6 +5,7 @@ import { CoursesSection } from "@/components/courses-section";
 import { LearningPaths } from "@/components/learning-paths";
 import { GrowthSection } from "@/components/growth-section";
 import { PotentialSection } from "@/components/potential-section";
+import { TestimonialsSection } from "@/components/testimonials-section";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -27,6 +28,9 @@ export default function Home() {
 
       {/* Potential Section (Unlock Your Potential as a Creator) */}
       <PotentialSection />
+
+      {/* Testimonials Section (Discover What Our Community Is Saying) */}
+      <TestimonialsSection />
 
       {/* Footer Section */}
       <Footer />

@@ -126,7 +126,7 @@ export const PotentialSection = () => {
         <div className="mt-6 sm:mt-7">
           <button
             type="button"
-            className="inline-flex items-center justify-center min-h-[44px] px-8 sm:px-9 py-2.5 sm:py-3 rounded-full bg-lime text-zinc-950 font-poppins font-semibold text-xs sm:text-sm hover:brightness-105 active:scale-95 transition-all shadow-[0_10px_25px_rgba(0,0,0,0.18)] cursor-pointer"
+            className="inline-flex items-center justify-center min-h-[44px] px-8 sm:px-8 py-2.5 sm:py-3 rounded-full bg-lime text-zinc-950 font-poppins font-medium text-xs sm:text-sm hover:brightness-105 active:scale-95 transition-all shadow-[0_10px_25px_rgba(0,0,0,0.18)] cursor-pointer"
           >
             Join as Creator
           </button>
