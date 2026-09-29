@@ -4,6 +4,7 @@ import { LogoMarquee } from "@/components/logo-marquee";
 import { CoursesSection } from "@/components/courses-section";
 import { LearningPaths } from "@/components/learning-paths";
 import { GrowthSection } from "@/components/growth-section";
+import { PotentialSection } from "@/components/potential-section";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -23,6 +24,9 @@ export default function Home() {
 
       {/* Growth & Course Management Section */}
       <GrowthSection />
+
+      {/* Potential Section (Unlock Your Potential as a Creator) */}
+      <PotentialSection />
 
       {/* Footer Section */}
       <Footer />

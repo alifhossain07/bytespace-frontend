@@ -9,6 +9,8 @@ interface ShapeGridProps {
   borderColor?: string;
   squareSize?: number;
   maxCols?: number;
+  numCols?: number;
+  numRows?: number;
   hoverFillColor?: string;
   shape?: "square" | "hexagon" | "circle" | "triangle";
   hoverTrailAmount?: number;
@@ -21,6 +23,8 @@ export const ShapeGrid: React.FC<ShapeGridProps> = ({
   borderColor = "rgba(255, 255, 255, 0.15)",
   squareSize = 96,
   maxCols = 14,
+  numCols,
+  numRows,
   hoverFillColor = "rgba(203, 252, 1, 0.08)",
   shape = "square",
   hoverTrailAmount = 3,
@@ -179,28 +183,30 @@ export const ShapeGrid: React.FC<ShapeGridProps> = ({
           }
         }
       } else {
-        const offsetX = ((gridOffset.current.x % effectiveSize) + effectiveSize) % effectiveSize;
-        const offsetY = ((gridOffset.current.y % effectiveSize) + effectiveSize) % effectiveSize;
+        const cellW = numCols ? canvas.width / numCols : effectiveSize;
+        const cellH = numRows ? canvas.height / numRows : (numCols ? cellW : effectiveSize);
+        const offsetX = numCols ? 0 : ((gridOffset.current.x % effectiveSize) + effectiveSize) % effectiveSize;
+        const offsetY = numRows ? 0 : ((gridOffset.current.y % effectiveSize) + effectiveSize) % effectiveSize;
 
-        const cols = Math.ceil(canvas.width / effectiveSize) + 1;
-        const rows = Math.ceil(canvas.height / effectiveSize) + 1;
+        const cols = numCols || (Math.ceil(canvas.width / effectiveSize) + 1);
+        const rows = numRows || (Math.ceil(canvas.height / effectiveSize) + 1);
 
         for (let col = 0; col < cols; col++) {
           for (let row = 0; row < rows; row++) {
-            const sx = col * effectiveSize + offsetX;
-            const sy = row * effectiveSize + offsetY;
+            const sx = col * cellW + offsetX;
+            const sy = row * cellH + offsetY;
 
             const cellKey = `${col},${row}`;
             const alpha = cellOpacities.current.get(cellKey);
             if (alpha) {
               ctx.globalAlpha = alpha;
               ctx.fillStyle = hoverFillColor;
-              ctx.fillRect(sx, sy, effectiveSize, effectiveSize);
+              ctx.fillRect(sx, sy, cellW, cellH);
               ctx.globalAlpha = 1;
             }
 
             ctx.strokeStyle = borderColor;
-            ctx.strokeRect(sx, sy, effectiveSize, effectiveSize);
+            ctx.strokeRect(sx, sy, cellW, cellH);
           }
         }
       }
@@ -211,8 +217,8 @@ export const ShapeGrid: React.FC<ShapeGridProps> = ({
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
       const currentSize = getSquareSize();
-      numSquaresX.current = Math.ceil(canvas.width / currentSize) + 1;
-      numSquaresY.current = Math.ceil(canvas.height / currentSize) + 1;
+      numSquaresX.current = numCols || (Math.ceil(canvas.width / currentSize) + 1);
+      numSquaresY.current = numRows || (Math.ceil(canvas.height / currentSize) + 1);
       drawGrid();
     };
 
@@ -364,14 +370,19 @@ export const ShapeGrid: React.FC<ShapeGridProps> = ({
           hoveredSquare.current = { x: col, y: row };
         }
       } else {
-        const offsetX = ((gridOffset.current.x % effectiveSize) + effectiveSize) % effectiveSize;
-        const offsetY = ((gridOffset.current.y % effectiveSize) + effectiveSize) % effectiveSize;
+        const cellW = numCols ? canvas.width / numCols : effectiveSize;
+        const cellH = numRows ? canvas.height / numRows : (numCols ? cellW : effectiveSize);
+        const offsetX = numCols ? 0 : ((gridOffset.current.x % effectiveSize) + effectiveSize) % effectiveSize;
+        const offsetY = numRows ? 0 : ((gridOffset.current.y % effectiveSize) + effectiveSize) % effectiveSize;
 
         const adjustedX = mouseX - offsetX;
         const adjustedY = mouseY - offsetY;
 
-        const col = Math.floor(adjustedX / effectiveSize);
-        const row = Math.floor(adjustedY / effectiveSize);
+        const col = Math.floor(adjustedX / cellW);
+        const row = Math.floor(adjustedY / cellH);
+
+        if (numCols && (col < 0 || col >= numCols)) return;
+        if (numRows && (row < 0 || row >= numRows)) return;
 
         if (
           !hoveredSquare.current ||
