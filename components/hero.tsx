@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Search } from "lucide-react";
+import { motion } from "framer-motion";
 import ShapeGrid from "@/components/reactbits/shape-grid";
 
 export const Hero = () => {
@@ -33,68 +34,157 @@ export const Hero = () => {
 
       {/* Top-Left Spring */}
       <div className="hidden md:block absolute left-[2%] xl:left-[0%] 2xl:left-[0%] top-[26%] sm:top-[28%] 2xl:top-[22%] lg:top-[21%] z-10 w-16 sm:w-24 md:w-28 lg:w-52 2xl:w-72 pointer-events-none select-none">
-        <Image
-          src="/images/Mask Group.png"
-          alt="Yellow spring"
-          width={130}
-          height={180}
-          className="w-full h-auto object-contain drop-shadow-xl"
-        />
+        <motion.div
+          animate={{
+            y: [0, -10, 2, 0],
+            scale: [1, 1.04, 0.99, 1],
+            rotate: [0, 2, -1.5, 0],
+          }}
+          transition={{
+            duration: 4.6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="w-full h-full"
+        >
+          <Image
+            src="/images/Mask Group.png"
+            alt="Yellow spring"
+            width={130}
+            height={180}
+            className="w-full h-auto object-contain drop-shadow-xl"
+          />
+        </motion.div>
       </div>
 
       {/* Mid-Left Spring */}
       <div className="hidden md:block absolute left-[10%] xl:left-[12%] 2xl:left-[13%] top-[48%] sm:top-[50%] md:top-[42%] 2xl:top-[46%] z-10 w-10 sm:w-14 md:w-16 lg:w-48 2xl:w-64 pointer-events-none select-none">
-        <Image
-          src="/images/Frame-1.png"
-          alt="White zigzag small"
-          width={80}
-          height={80}
-          className="w-full h-auto object-contain drop-shadow-lg"
-        />
+        <motion.div
+          animate={{
+            y: [0, 8, -2, 0],
+            scale: [1, 0.98, 1.035, 1],
+            rotate: [0, -2, 1.5, 0],
+          }}
+          transition={{
+            duration: 5.1,
+            delay: 0.4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="w-full h-full"
+        >
+          <Image
+            src="/images/Frame-1.png"
+            alt="White zigzag small"
+            width={80}
+            height={80}
+            className="w-full h-auto object-contain drop-shadow-lg"
+          />
+        </motion.div>
       </div>
 
       {/* Bottom-Left Donut */}
       <div className="hidden md:block absolute left-[2%] xl:left-[0%] 2xl:left-[10%] bottom-[4%] sm:bottom-[6%] md:bottom-[-2%] z-20 w-24 sm:w-36 md:w-44 lg:w-72 2xl:w-80 pointer-events-none select-none">
-        <Image
-          src="/images/Cone.png"
-          alt="White torus ring"
-          width={210}
-          height={210}
-          className="w-full h-auto object-contain drop-shadow-2xl"
-        />
+        <motion.div
+          animate={{
+            y: [0, -8, 2, 0],
+            scale: [1, 1.03, 0.99, 1],
+            rotate: [0, 1.5, -2, 0],
+          }}
+          transition={{
+            duration: 4.8,
+            delay: 0.8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="w-full h-full"
+        >
+          <Image
+            src="/images/Cone.png"
+            alt="White torus ring"
+            width={210}
+            height={210}
+            className="w-full h-auto object-contain drop-shadow-2xl"
+          />
+        </motion.div>
       </div>
 
       {/* Top-Right Cylinder */}
       <div className="hidden md:block absolute right-[2%] xl:right-[0%] 2xl:right-[0%] top-[22%] sm:top-[24%] md:top-[24%] z-10 w-16 sm:w-24 md:w-28 lg:w-56 pointer-events-none select-none">
-        <Image
-          src="/images/Cone-1.png"
-          alt="Yellow cone cylinder"
-          width={130}
-          height={180}
-          className="w-full h-auto object-contain drop-shadow-xl"
-        />
+        <motion.div
+          animate={{
+            y: [0, -11, 2, 0],
+            scale: [1, 1.04, 0.98, 1],
+            rotate: [0, -2, 1.5, 0],
+          }}
+          transition={{
+            duration: 4.3,
+            delay: 0.2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="w-full h-full"
+        >
+          <Image
+            src="/images/Cone-1.png"
+            alt="Yellow cone cylinder"
+            width={130}
+            height={180}
+            className="w-full h-auto object-contain drop-shadow-xl"
+          />
+        </motion.div>
       </div>
 
       {/* Mid-Right Pyramid */}
       <div className="hidden md:block absolute right-[10%] xl:right-[12%] 2xl:right-[14%] top-[46%] sm:top-[48%] md:top-[43%] 2xl:top-[47%] z-10 w-12 sm:w-16 md:w-20 lg:w-48 2xl:w-60 pointer-events-none select-none">
-        <Image
-          src="/images/Cone-2.png"
-          alt="White pyramid"
-          width={95}
-          height={95}
-          className="w-full h-auto object-contain drop-shadow-lg"
-        />
+        <motion.div
+          animate={{
+            y: [0, 8, -2, 0],
+            scale: [1, 0.98, 1.035, 1],
+            rotate: [0, 2, -1.5, 0],
+          }}
+          transition={{
+            duration: 5.3,
+            delay: 0.6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="w-full h-full"
+        >
+          <Image
+            src="/images/Cone-2.png"
+            alt="White pyramid"
+            width={95}
+            height={95}
+            className="w-full h-auto object-contain drop-shadow-lg"
+          />
+        </motion.div>
       </div>
 
       {/* Bottom-Right Zigzag */}
       <div className="hidden md:block absolute right-[2%] lg:right-[2%] 2xl:right-[8.5%] bottom-[6%] sm:bottom-[8%] md:bottom-[3%] 2xl:bottom-[-1%] z-20 w-20 sm:w-28 md:w-36 lg:w-56 2xl:w-70 pointer-events-none select-none">
-        <Image
-          src="/images/Frame.png"
-          alt="White zigzag large"
-          width={175}
-          height={175}
-          className="w-full h-auto object-contain drop-shadow-2xl"
-        />
+        <motion.div
+          animate={{
+            y: [0, -9, 2, 0],
+            scale: [1, 1.035, 0.99, 1],
+            rotate: [0, -1.5, 2, 0],
+          }}
+          transition={{
+            duration: 4.7,
+            delay: 1.0,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="w-full h-full"
+        >
+          <Image
+            src="/images/Frame.png"
+            alt="White zigzag large"
+            width={175}
+            height={175}
+            className="w-full h-auto object-contain drop-shadow-2xl"
+          />
+        </motion.div>
       </div>
 
       {/* Inner Container */}
