@@ -1,16 +1,39 @@
 import React from "react";
+import { Hero } from "@/components/hero";
+import { LogoMarquee } from "@/components/logo-marquee";
+import { CoursesSection } from "@/components/courses-section";
+import { LearningPaths } from "@/components/learning-paths";
+import { GrowthSection } from "@/components/growth-section";
+import { PotentialSection } from "@/components/potential-section";
+import { TestimonialsSection } from "@/components/testimonials-section";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col items-center justify-center text-center">
-      <section className="space-y-4">
-        <h1 className="text-4xl sm:text-6xl font-bold font-poppins text-white">
-          ByteSpace
-        </h1>
-        <p className="text-lg sm:text-xl text-zinc-400 font-satoshi max-w-lg mx-auto">
-          Start building your project here.
-        </p>
-      </section>
+    <main className="w-full min-h-screen bg-white text-zinc-900 overflow-x-clip">
+      {/* Hero Section (Persian Blue with ShapeGrid) */}
+      <Hero />
+
+      {/* Partner Logos Marquee Section (Background #F5F5F6) */}
+      <LogoMarquee />
+
+      {/* Courses Section (Discover Your Passion, Build Your Skills) */}
+      <CoursesSection />
+
+      {/* Learning Paths Section (Explore Diverse Learning Paths at Bytespace) */}
+      <LearningPaths />
+
+      {/* Growth & Course Management Section */}
+      <GrowthSection />
+
+      {/* Potential Section (Unlock Your Potential as a Creator) */}
+      <PotentialSection />
+
+      {/* Testimonials Section (Discover What Our Community Is Saying) */}
+      <TestimonialsSection />
+
+      {/* Footer Section */}
+      <Footer />
     </main>
   );
 }
