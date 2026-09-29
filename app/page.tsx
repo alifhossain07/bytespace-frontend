@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero";
 import { LogoMarquee } from "@/components/logo-marquee";
 import { CoursesSection } from "@/components/courses-section";
 import { LearningPaths } from "@/components/learning-paths";
+import { GrowthSection } from "@/components/growth-section";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -19,6 +20,9 @@ export default function Home() {
 
       {/* Learning Paths Section (Explore Diverse Learning Paths at Bytespace) */}
       <LearningPaths />
+
+      {/* Growth & Course Management Section */}
+      <GrowthSection />
 
       {/* Footer Section */}
       <Footer />
