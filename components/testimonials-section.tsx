@@ -46,7 +46,7 @@ export const TestimonialsSection = () => {
       aria-label="Community Testimonials"
       className="relative w-full bg-[#FAFAFA] text-zinc-900 py-16 sm:py-20 lg:py-0 lg:h-[784px] flex flex-col justify-center overflow-hidden select-none"
     >
-      {/* Background Gradient Eclipses (as per Figma specification: 784px height) */}
+      {/* Background Gradient Eclipses  */}
 
       {/* 1. Top-Center Green Glow */}
       <div className="absolute -top-32 sm:top-[-6%] left-[30%] sm:left-[25%] pointer-events-none select-none z-0 opacity-80 sm:opacity-90 max-w-none">
@@ -60,7 +60,7 @@ export const TestimonialsSection = () => {
         />
       </div>
 
-      {/* 2. Right-Center Green Glow (784px height matching section) */}
+      {/* 2. Right-Center Green Glow  */}
       <div className="absolute top-0 -right-24 sm:-right-5 pointer-events-none select-none z-0  max-w-none h-full">
         <Image
           src="/images/right-center-eclipse-green.png"
@@ -86,7 +86,7 @@ export const TestimonialsSection = () => {
 
       {/* Main Content Container */}
       <div className="relative z-10 w-11/12 max-w-[1170px] mx-auto">
-        {/* Header: Title (44px) & Subtitle (18px) */}
+        {/* Header: Title  */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-end justify-between">
           <div className="lg:col-span-6">
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-semibold font-poppins text-zinc-900 tracking-tight leading-[1.16]">
@@ -112,7 +112,7 @@ export const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* 3 Testimonial Cards Grid (Gap between header and cards is controlled here via mt-10 / mt-12) */}
+        {/* 3 Testimonial Cards Grid  */}
         <div className="mt-10 sm:mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 justify-items-center">
           {testimonials.map((item) => (
             <article
@@ -130,7 +130,7 @@ export const TestimonialsSection = () => {
                 />
               </div>
 
-              {/* Reviewer Name (20px) & Designation (18px) */}
+              {/* Reviewer Name  & Designation  */}
               <div className="mt-4">
                 <h3 className="text-[20px] font-semibold font-poppins text-zinc-900 leading-snug">
                   {item.name}
@@ -140,7 +140,7 @@ export const TestimonialsSection = () => {
                 </p>
               </div>
 
-              {/* Review Quote (18px) */}
+              {/* Review Quote  */}
               <p className="mt-6 text-sm sm:text-base lg:text-[18px] text-zinc-600 font-satoshi font-normal leading-relaxed">
                 {item.review}
               </p>

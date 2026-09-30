@@ -11,25 +11,25 @@ import { Footer } from "@/components/footer";
 export default function Home() {
   return (
     <main className="w-full min-h-screen bg-white text-zinc-900 overflow-x-clip">
-      {/* Hero Section (Persian Blue with ShapeGrid) */}
+      {/* Hero Section  */}
       <Hero />
 
-      {/* Partner Logos Marquee Section (Background #F5F5F6) */}
+      {/* Partner Logos Marquee Section  */}
       <LogoMarquee />
 
-      {/* Courses Section (Discover Your Passion, Build Your Skills) */}
+      {/* Courses Section  */}
       <CoursesSection />
 
-      {/* Learning Paths Section (Explore Diverse Learning Paths at Bytespace) */}
+      {/* Learning Paths Section  */}
       <LearningPaths />
 
       {/* Growth & Course Management Section */}
       <GrowthSection />
 
-      {/* Potential Section (Unlock Your Potential as a Creator) */}
+      {/* Potential Section */}
       <PotentialSection />
 
-      {/* Testimonials Section (Discover What Our Community Is Saying) */}
+      {/* Testimonials Section */}
       <TestimonialsSection />
 
       {/* Footer Section */}

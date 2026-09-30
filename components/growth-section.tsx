@@ -12,8 +12,8 @@ export const GrowthSection = () => {
       aria-label="Professional Growth & Course Management"
       className="relative w-full bg-[#FAFAFA] text-zinc-900 py-16 sm:py-24 md:py-32 overflow-hidden"
     >
-      {/* Background Gradient Eclipses (as per Figma specification) */}
-      {/* 1. Top Green Glow (topgreen-eclispe.png on top) */}
+      {/* Background Gradient Eclipses  */}
+      {/* 1. Top Green Glow  */}
       <div className="absolute -top-24 sm:-top-36 right-0 sm:right-[10%] lg:right-[30%] pointer-events-none select-none z-0 opacity-80 sm:opacity-90 max-w-none">
         <Image
           src="/images/topgreen-eclispe.png"
@@ -25,7 +25,7 @@ export const GrowthSection = () => {
         />
       </div>
 
-      {/* 2. Left Green Glow (leftgreen-eclispe.png on left) */}
+      {/* 2. Left Green Glow  */}
       <div className="absolute -bottom-8 sm:bottom-1 -left-12 sm:left-0 pointer-events-none select-none z-0 opacity-85 sm:opacity-95 max-w-none">
         <Image
           src="/images/leftgreen-eclispe.png"
@@ -37,7 +37,7 @@ export const GrowthSection = () => {
         />
       </div>
 
-      {/* 3. Bottom/Right Blue Glow (bottomrightblue-eclipse.png on right) */}
+      {/* 3. Bottom/Right Blue Glow  */}
       <div className="absolute top-[32%] sm:top-[50%] -right-16 sm:-right-24 pointer-events-none select-none z-0 opacity-80 sm:opacity-90 max-w-none">
         <Image
           src="/images/bottomrightblue-eclipse.png"
@@ -51,11 +51,10 @@ export const GrowthSection = () => {
 
       {/* Main Container */}
       <div className="relative z-10 w-10/12 max-w-[1170px] mx-auto flex flex-col gap-24 sm:gap-32 lg:gap-36">
-        {/* ========================================================= */}
         {/* ROW 1: Your Path to Professional Growth Starts Here!       */}
-        {/* ========================================================= */}
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          {/* Left Column: Typography & Metrics (col-span-7 for wider 2-line heading) */}
+          {/* Left Column: Typography & Metrics  */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[46px] font-semibold font-poppins text-zinc-900 tracking-tight leading-[1.16]">
               <FoldText
@@ -76,7 +75,7 @@ export const GrowthSection = () => {
               need.
             </p>
 
-            {/* Metrics Row (12K Students, 70+ Courses, 16 Creators) */}
+            {/* Metrics Row  */}
             <div className="mt-8 sm:mt-10 flex items-center gap-8 sm:gap-12">
               <div>
                 <p className="text-3xl sm:text-4xl font-medium font-poppins text-persian-blue tracking-tight">
@@ -105,13 +104,13 @@ export const GrowthSection = () => {
             </div>
           </div>
 
-          {/* Right Column: Male Visual Showcase (col-span-5 to stay on the right) */}
+          {/* Right Column: Male Visual Showcase () */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[440px] sm:max-w-[480px] lg:max-w-[450px] xl:max-w-[480px] h-[430px] sm:h-[480px] lg:h-[490px] xl:h-[510px] select-none">
-              {/* 1. Behind Card: Learn Figma Course Card (Figma Specs: Width 373px, Height 384px, Radius 24px, Border 1px) */}
+              {/* 1. Behind Card: Learn Figma Course Card  */}
               <article className="absolute top-2 sm:-top-7 left-0 sm:-left-20 z-10 w-[240px] sm:w-[280px] lg:w-[270px] xl:w-[373px] h-auto xl:h-[384px] bg-white rounded-[24px] border border-zinc-200 p-3 sm:p-3.5 xl:p-4 shadow-[0_12px_35px_rgba(0,0,0,0.06)] flex flex-col justify-between">
                 <div>
-                  {/* Course Thumbnail with Frosted Badges Overlay (Figma Image Height: 212px) */}
+                  {/* Course Thumbnail with Frosted Badges Overlay  */}
                   <div className="relative w-full h-[125px] sm:h-[150px] lg:h-[145px] xl:h-[212px] rounded-[16px] overflow-hidden bg-zinc-100 shrink-0">
                     <Image
                       src="/images/card1.jpg"
@@ -205,7 +204,7 @@ export const GrowthSection = () => {
                 />
               </div>
 
-              {/* 4. Floating Badge: Learning Progress 55% */}
+              {/* 4. Floating Badge */}
               <div className="absolute top-36 sm:top-48 right-0 sm:-right-2 md:-right-3 z-30 bg-white rounded-[20px] p-3.5 sm:p-4 shadow-[0_15px_35px_rgba(0,0,0,0.08)] border border-zinc-100 space-y-4 min-w-[160px] sm:min-w-[220px]">
                 <p className="text-[11px] sm:text-xs font-satoshi text-zinc-500 font-medium">
                   Learning Progress
@@ -221,14 +220,13 @@ export const GrowthSection = () => {
           </div>
         </div>
 
-        {/* ========================================================= */}
         {/* ROW 2: Create & Manage Courses Easily.                     */}
-        {/* ========================================================= */}
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Female Visual Showcase (col-span-5) */}
+          {/* Left Column: Female Visual Showcase  */}
           <div className="lg:col-span-5 xl:col-span-5 flex justify-center lg:justify-start order-2 lg:order-1">
             <div className="relative w-full max-w-[450px] sm:max-w-[500px] lg:max-w-[470px] xl:max-w-[500px] h-[460px] sm:h-[510px] md:h-[550px] select-none">
-              {/* 1. Floating Card: Total Revenue (July 1-28, $120.29) */}
+              {/* 1. Floating Card: Total Revenue  */}
               <div className="absolute top-2 sm:top-8 left-0 sm:-left-4 z-10 bg-persian-blue text-white rounded-[20px] p-3.5 sm:px-4 sm:py-3 shadow-[0_12px_30px_rgba(0,59,226,0.28)] min-w-[165px] sm:min-w-[220px]">
                 <p className="text-[11px] sm:text-[16px] font-satoshi text-white/90 font-medium">
                   Total Revenue
@@ -244,7 +242,7 @@ export const GrowthSection = () => {
                 </div>
               </div>
 
-              {/* 2. Floating Card: Year to Date (2023, $1,200.38, +12%) */}
+              {/* 2. Floating Card: Year to Date  */}
               <div className="absolute top-36 sm:top-42 left-0 sm:-left-4 z-10 bg-persian-blue text-white rounded-[20px] p-3.5 sm:p-4 shadow-[0_12px_30px_rgba(0,59,226,0.28)] min-w-[150px] sm:min-w-[135px]">
                 <p className="text-[11px] sm:text-[16px] font-satoshi text-white/90 font-medium">
                   Year to Date
@@ -262,7 +260,7 @@ export const GrowthSection = () => {
                 </div>
               </div>
 
-              {/* 3. Squiggle Ribbon behind female (femalemask.png) */}
+              {/* 3. Squiggle Ribbon behind female  */}
               <div className="absolute top-16 sm:top-24 right-6 sm:-right-7 z-30 w-[105px] sm:w-[135px] md:w-[215px] pointer-events-none">
                 <Image
                   src="/images/femalemask.png"
@@ -273,7 +271,7 @@ export const GrowthSection = () => {
                 />
               </div>
 
-              {/* 4. Female Cutout (female.png) */}
+              {/* 4. Female Cutout  */}
               <div className="relative z-20 w-[280px] bottom-10 sm:w-[340px] md:w-[550px] mx-auto pt-6 pointer-events-none">
                 <Image
                   src="/images/female2.png"
@@ -285,7 +283,7 @@ export const GrowthSection = () => {
                 />
               </div>
 
-              {/* 5. Floating Card: Happy Students (4.6, people2.png) */}
+              {/* 5. Floating Card: Happy Students  */}
               <div className="absolute bottom-2 sm:bottom-4 right-1 sm:right-5 md:right-8 z-30 bg-white rounded-[20px] p-3 sm:p-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.08)] border border-zinc-100 min-w-[180px] sm:min-w-[200px]">
                 <p className="text-xs sm:text-sm font-poppins font-semibold text-zinc-900">
                   Happy Students
@@ -308,7 +306,7 @@ export const GrowthSection = () => {
             </div>
           </div>
 
-          {/* Right Column: Typography & Feature Checklist (col-span-7 for wider text area) */}
+          {/* Right Column: Typography & Feature Checklist  */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center space-y-4 order-1 lg:order-2 lg:pl-6 xl:pl-24">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[44px] font-semibold font-poppins text-zinc-900 tracking-tight leading-[1.16]">
               <FoldText

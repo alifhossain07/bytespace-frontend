@@ -68,7 +68,7 @@ export const LearningPaths = () => {
           </p>
         </div>
 
-        {/* Categories 6 Boxes (167x167px, icon 60x60px, title 20px) */}
+        {/* Categories 6 Boxes  */}
         <div className="mt-12 sm:mt-16 flex flex-wrap items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-7">
           {categories.map((cat) => (
             <article
